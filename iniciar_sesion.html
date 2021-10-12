@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <title>Inisiar Sesion - ADRA</title>
+    <link rel="stylesheet" type="text/css" href="css/iniciar_sesion.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link rel="icon" href="img/grav.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <div class="logo" id="logo-ad">
+        <a href="index.html" title="home"><img src="img/logoAdra.png" alt="logo" width="120px" height="20px"></a>
+    </div>
+    <img data-aos="fade-right" class="wave" id="waves" src="img/wave.png">
+    <div class="container">
+        <div class="img" id="imgs">
+            <img data-aos="zoom-out" src="img/bg.svg"><br>
+            <div class="campo-registro">
+                <span style="cursor: default;">No estas tienes una cuenta, </span>
+                <a href="#regitro" onclick="registro()"> registrate</a>
+            </div>
+        </div>
+        <div class="login-content" id="form-sign-up">
+            <form data-aos="fade-up" class="login" id="login">
+                <img src="img/avatar.svg">
+                <h2 class="title">Welcome</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <input type="email" placeholder="Usuario" class="input" id="txtuser">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <input id="pswduser" type="password" placeholder="Clave" class="input">
+                    </div>
+                </div>
+                <a href="#">Forgot Password?</a>
+                <button type="submit" class="btn"> iniciar sesion</button>
+            </form>
+
+
+        </div>
+        <div class="registro-users" id="registros">
+            <div class="Iam">
+                <p>Bienvenido</p>
+                <b>
+                          <div class="innerIam">
+                            a registro<br /> 
+                            de usuarios<br />
+                            ADRA<br />
+                            Training Platform
+                            </div>
+                    </b>
+            </div>
+            <form id="registrarse">
+
+                <input type="text" name=" " id="txtnombre" placeholder="Nombre " required>
+                <input type="text" name=" " id="txtApellidos" placeholder="Apellidos " required>
+                <input type="text" name=" " id="txtDireccion" placeholder="Direccion " required>
+                <select name="pais" id="nacionalidad" class="select-css">
+                    <option value="AR">Argentina</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BR">Brasil</option>
+                    <option value="CL">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="GY">Guayana</option>
+                    <option value="GF">Guayana Francesa</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE" selected>Perú</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="VE">Venezuela</option>
+                    </select>
+                <input type="email" name=" " id="txtcorreo" placeholder="Correo " required>
+                <input id="pswdContrasena" type="password" placeholder="Password" required>
+                <input type="email" name=" " id="correoVerificacion" placeholder="Correo de verificacion " required>
+
+                <button type="submit" class="btn-r">Registrar</button>
+                <p>
+                    <a onclick="solicitarAdm()" style="cursor: pointer;margin-left: 23%;" id="count-admi-soli">solicitar cuenta administrativa</a>
+                </p>
+            </form>
+
+            <div class="sign-uping ">
+                <p>Ya tienes una cuenta? <a style="cursor: pointer;" onclick="iniciar_Sesion()">Iniciar Sesion</a></p>
+            </div>
+            <div class="redes-sign-up ">
+                <h5>Iniciar Sesion con:</h5>
+                <a href=" "><i class="fab fa-google-plus"></i></a>
+                <a href=" "><i class="fab fa-facebook"></i></a>
+                <a href=" "><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="info ">
+        ADRA Training Platform | Copyright <sup>©</sup>
+    </div>
+    <script src="js/iniciar_sesion.js"></script>
+</body>
+
+</html>

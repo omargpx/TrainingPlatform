@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/perfil-usuario.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" href="img/grav.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Perfil de usuarios</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="min-top"></div>
+    <div class="circle top-right"></div>
+    <div class="circle bottom-left"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <div class="body">
+        <div class="container">
+            <div class="part-perfil">
+                <div class="img-portada-perfil">
+                    <img src="img/wes-hicks-MEL-jJnm7RQ-unsplash.jpg" alt="portada-perfil">
+                </div>
+                <div data-aos="fade-up" class="card">
+                    <div class="avatar" data-aos="zoom-out">
+                        <img src="img/avatar.svg" alt="avatar">
+                    </div>
+                    <div class="info-usu">
+                        <h3 id="name-usu-card">Nombre de Usuario</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor perferendis velit voluptatum laudantium aut ipsum, assumenda ipsa sequi blanditiis officiis exercitationem, nostrum impedit odit non ratione ut delectus consequatur,
+                            Month.
+                        </p>
+                    </div>
+                </div>
+                <div class="redes">
+                    <i class="social">
+                        <!--imagen facebook-->
+                    </i>
+                    <i class="social">
+                        <!--imagen instagram-->
+                    </i>
+                    <i class="social">
+                        <!--imagen twiter-->
+                    </i>
+                </div>
+            </div>
+            <div class="part-confg" id="acatualizar-usu">
+                <button class="btn btn-primary btn-block" onclick="editar()">editar</button>
+                <div class="activitys" data-aos="zoom-in" style="margin-top: 3%; margin-left: -5%;">
+                    <div class="cards-actvity">
+                        <img src="img/svg/anuncios.svg" alt="">
+                        <h4>Anuncios</h4>
+                    </div>
+                    <div class="cards-actvity">
+                        <img src="img/svg/certificados.svg" alt="">
+                        <h4>Certificados</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="perfil()">
+                        <img src="img/svg/configuration.svg" alt="">
+                        <h4>Perfil</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="cursos()">
+                        <img src="img/svg/cursos.svg" alt="">
+                        <h4>Cursos</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="dashboard()">
+                        <img src="img/svg/dashboard.svg" alt="">
+                        <h4>Dashboard</h4>
+                    </div>
+                    <div class="cards-actvity">
+                        <img src="img/svg/historial.svg" alt="">
+                        <h4>Historial</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            //datos 
+            let obtenerName = sessionStorage.getItem('nameUsu');
+            let usuariostorage = JSON.parse(localStorage.getItem("usuarios"));
+            let buscarUsus = usuariostorage.find(apellidos => apellidos.nombre == obtenerName);
+            let nameNav = document.getElementById('name-usu-card');
+            nameNav.innerHTML = ``;
+            nameNav.innerHTML = buscarUsus.nombre + " " + buscarUsus.apellidos;
+            console.log(nameNav);
+        })();
+    </script>
+    <script src="js/perfil.js"></script>
+</body>
+
+</html>

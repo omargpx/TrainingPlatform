@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/portafolio.css">
+    <link rel="icon" href="img/grav.svg">
+    <title>Cursos - ADRA</title>
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="circle-port">
+    </div>
+    <div class="wave">
+        <img src="img/svg/boooks.svg" alt="">
+    </div>
+    <nav>
+        <div class="menu">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAZElEQVRIS+2TWQ4AEBBD9Whu7mbj2xKjmVRC+C5dXiCJD8Tvp2/gLnx+IjMzN9ZCAKAJPTSQG0TSz+6eZyBvwDLoofYBw5BpA/lE9xs4kDOAwrRkIccNmHQ72gd/8k5tRnP/RBW2JxoZhnBMHwAAAABJRU5ErkJggg==" />
+        </div>
+        <ul class="menu-links">
+            <li>
+                <a href="dashboard.html"> <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href=""> <i class="fas fa-book-open"></i> Cursos</a>
+            </li>
+            <li>
+                <a href="#"> <i class="fas fa-align-left"></i> Historial</a>
+            </li>
+            <li>
+                <a href="#guardado"> <i class="far fa-bookmark"></i> Guardado</a>
+            </li>
+            <li>
+                <a href="perfil-usuario.html"> <i class="fas fa-user"></i> Perfil</a>
+            </li>
+            <li>
+                <a onclick="logout()" style="cursor: pointer;"> <i style="transform: rotate(180deg);" class="fas fa-sign-out-alt"></i>Cerrar Sesion </a>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="dashboard.html"><img src="img/logoAdra.png" alt="logo" width="150px" height="25px"></a>
+        </div>
+        <div class="name-user">
+            <a href="perfil-usuario.html">
+                <h3 style="margin-right: 5px;" id="name-usu-nav">Pepe Ramirez</h3>
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" width="22px" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="imgSlide">
+        <ul>
+            <li>
+                <a href=""><img src="https://images.unsplash.com/photo-1593642634315-48f5414c3ad9?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt=""></a>
+            </li>
+            <li>
+                <a href=""><img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt=""></a>
+            </li>
+        </ul>
+    </div>
+    <div class="min-portafolio" id="grid-cursos">
+        <div class="border-bottom-primary shadow">
+        </div>
+        <!--End page content-->
+    </div>
+
+    <script>
+        (() => {
+            let addCardCurso = document.getElementById('grid-cursos');
+            let tasks = JSON.parse(localStorage.getItem('tasks')); // obteniendo las cursos del localstorage
+            addCardCurso.innerHTML = '';
+            for (let i = 0; i < tasks.length; i++) {
+                let title = tasks[i].NombreCurso;
+                let NombreDocente = tasks[i].NombreDocente;
+                let portada = tasks[i].portada;
+                let url = tasks[i].url;
+                let DescripcionCurso = tasks[i].DescripcionCurso;
+
+                console.log(tasks);
+
+                addCardCurso.innerHTML += `
+                        <div class="border-bottom-primary hov-card data-aos="zoom-out">
+                            <div class="${portada} card-course">
+                                <img class="${portada}" src="${portada}" alt="portada">
+                                <div class="${portada} descripcion">
+                                    <h4 class="${portada}">${title}</h4>
+                                    <div class="${portada}"><i class="${portada}">${NombreDocente}</i></div>
+                                    <p class="${portada}">${DescripcionCurso}</p>
+                                </div>
+                            </div>
+                        </div>`;
+            }
+            let obtenerName = sessionStorage.getItem('nameUsu');
+            let nameNav = document.getElementById('name-usu-nav');
+            nameNav.innerHTML = ``;
+            nameNav.innerHTML = "Bienvenido " + obtenerName;
+            console.log(nameNav);
+        })();
+        const navSlide = () => {
+            const menu = document.querySelector('.menu');
+            const nav = document.querySelector('.menu-links');
+
+            menu.addEventListener('click', () => {
+                //togle anave menu
+                nav.classList.toggle('nav-active');
+            });
+
+
+        }
+        navSlide();
+
+        function logout() {
+            let nombre = sessionStorage.getItem('nameUsu');
+            swal({
+                    title: "estas seguro?",
+                    text: "estas apunto de cerrar sesion",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("se cerro sesion de " + nombre, {
+                            icon: "success",
+                        });
+                        window.location.href = "iniciar_sesion.html";
+                        history.pushState(null, null, 'no-back-button');
+                        window.addEventListener('popstate', function(event) {
+                            history.pushState(null, null, 'no-back-button');
+                        });
+                    } else {
+                        console.log("aea");
+                    }
+                });
+        }
+        //seleccion de cursos y traspase de datos 
+        let cursoSelected = document.querySelector('#grid-cursos');
+        cursoSelected.addEventListener('click', contenCurso);
+
+        function contenCurso(e) {
+            e.preventDefault();
+            console.log(e.target.classList[0]);
+            let nameCurso = e.target.classList[0];
+            localStorage.setItem('clases_del_curso', JSON.stringify(nameCurso));
+            window.location.href = "registro-curso.html";
+        }
+    </script>
+</body>
+
+</html>

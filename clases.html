@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/clasesxcurso.css">
+    <link rel="icon" href="img/grav.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Training Platform</title>
+    <!--swetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="min-top"></div>
+    <div class="circle top-right"></div>
+    <div class="circle bottom-left"></div>
+    <div class="min-circle"></div>
+    <div class="circle-c"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init();
+    </script>
+
+    <nav>
+        <div class="menu">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAZElEQVRIS+2TWQ4AEBBD9Whu7mbj2xKjmVRC+C5dXiCJD8Tvp2/gLnx+IjMzN9ZCAKAJPTSQG0TSz+6eZyBvwDLoofYBw5BpA/lE9xs4kDOAwrRkIccNmHQ72gd/8k5tRnP/RBW2JxoZhnBMHwAAAABJRU5ErkJggg==" />
+        </div>
+        <ul class="menu-links">
+            <li>
+                <a href="dashboard.html"> <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="portafolio.html"> <i class="fas fa-book-open"></i> Cursos</a>
+            </li>
+            <li>
+                <a href="404_error.html"> <i class="fas fa-align-left"></i> Historial</a>
+            </li>
+            <li>
+                <a href="404_error.html"> <i class="far fa-bookmark"></i> Guardado</a>
+            </li>
+            <li>
+                <a href="perfil-usuario.html"> <i class="fas fa-user"></i> Perfil</a>
+            </li>
+            <li>
+                <a onclick="logout()" style="cursor: pointer;padding-bottom: 2em;"><i style="transform: rotate(180deg);" class="fas fa-sign-out-alt"></i> Cerrar Sesion </a>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="dashboard.html"><img src="img/logoAdra.png" alt="logo" width="150px" height="25px"></a>
+        </div>
+        <div class="name-user">
+            <a href="perfil-usuario.html">
+                <h3 style="margin-right: 5px;" id="name-usu-nav">Pepe Ramirez</h3>
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" width="22px" />
+            </a>
+        </div>
+    </nav>
+
+    <!-- grid de las clases del curso al cual se regustro-->
+
+    <div class="body">
+        <div class="clases">
+            <h2>Clases</h2>
+            <div id="btn-clases">
+
+                <!--botones de que ridereccionas al contenido de cada clase-->
+
+            </div>
+        </div>
+        <div class="content-clas">
+            <iframe id="videoClase" width="100%" height="315" src="https://www.youtube.com/embed/B-jCi2rq7Jc?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="descripcion">
+                <h3 id="title-clase">Nombre de la clase</h3>
+                <p id="desc-clase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium dignissimos sunt blanditiis non velit sapiente aspernatur excepturi nam omnis accusantium odit distinctio maiores consequuntur officia earum ad odio facere culpa necessitatibus
+                    nihil, fugiat eos accusamus.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        (() => {
+            //obteniendo las clases del curso
+            let urlPortada = JSON.parse(localStorage.getItem('clases_del_curso'));
+            let obtenerCurso = JSON.parse(localStorage.getItem('tasks'));
+            let buscarCurso = obtenerCurso.find(curso => curso.portada == urlPortada); //buscando al curso a traves del id unico de cada imagen
+            let addClases = document.getElementById('btn-clases');
+            let dataClase = buscarCurso.clases;
+            console.log(dataClase);
+            for (let i = 0; i < dataClase.length; i++) {
+                let Titlecurso = dataClase[i].Titlecurso;
+                let descripcion = dataClase[i].descripcion;
+                let temaClase = dataClase[i].temaClase;
+                let urlContent = dataClase[i].urlContent;
+
+                addClases.innerHTML += `<button onclick="mostrarClase('${temaClase}');"><span>${temaClase}</span></button>`;
+            }
+
+            //obtener datos del usuario
+            let insertName = document.getElementById('name-usu');
+            let nameNav = document.getElementById('name-usu-nav');
+            let obtenerName = sessionStorage.getItem('nameUsu'); //obteniendo nombre de usuario del sesionSTORAGE
+            //localSTorage
+            let usuariostorage = JSON.parse(localStorage.getItem("usuarios"));
+            let buscarUsus = usuariostorage.find(usuario => usuario.nombre == obtenerName);
+            console.log(buscarUsus);
+
+        })();
+
+        function mostrarClase(temaclase) {
+            let urlPortada = JSON.parse(localStorage.getItem('clases_del_curso'));
+            let obtenerCurso = JSON.parse(localStorage.getItem('tasks'));
+            let buscarCurso = obtenerCurso.find(curso => curso.portada == urlPortada);
+
+            let nameClase = buscarCurso.clases;
+            let contentClass = nameClase.find(clases => clases.temaClase == temaclase);
+
+            //remplazando contenido
+            document.getElementById('title-clase').innerHTML = contentClass.temaClase;
+            document.getElementById('desc-clase').innerHTML = contentClass.descripcion;
+            let urlVideo = contentClass.urlContent;
+            document.getElementById('videoClase').setAttribute("src", urlVideo);
+            console.log(urlVideo);
+        }
+
+        function logout() {
+            history.pushState(null, null, 'no-back-button');
+            window.addEventListener('popstate', function(event) {
+                history.pushState(null, null, 'no-back-button');
+            });
+            window.location.href = "iniciar_sesion.html";
+        }
+    </script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

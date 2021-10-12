@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: transparent;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.circle {
+    z-index: -1;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background: url(https://images.unsplash.com/photo-1477346611705-65d1883cee1e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80) no-repeat center center fixed;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: brightness(0.5);
+}
+
+.info {
+    position: absolute;
+    color: rgb(110, 110, 110);
+    font-family: -apple-system, Ubuntu, 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    bottom: 1px;
+    right: 1px;
+    cursor: default;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6vh;
+    min-height: 5vh;
+    background: linear-gradient(to bottom, #031024cf, transparent);
+    /*header nav*/
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-links li a {
+    font-family: 'Montserrat', sans-serif;
+    /*fontsgoolge*/
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*fontsgoolge*/
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 15px;
+}
+
+.nav-links li a:hover {
+    color: #ff3554;
+    transition: color 0.3s ease;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+.logo {
+    margin-left: 10px;
+    filter: contrast(150%);
+}
+
+.logo:hover {
+    filter: blur(2px);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+
+/*cards*/
+
+.content {
+    margin-top: 10%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    width: 83%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    display: block;
+    width: 20vw;
+    height: 65vh;
+    justify-content: space-between;
+    border-radius: 1.5%;
+    overflow: hidden;
+    background: #16181F;
+    cursor: pointer;
+}
+
+.cards:hover .card {
+    filter: brightness(0.4);
+}
+
+.cards .card:hover {
+    transform: scale(1.04);
+    transition: transform .3s ease-out;
+    opacity: 1;
+    filter: brightness(1);
+    background: linear-gradient(to bottom, #0B0E14, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #16181F, #8025546e);
+}
+
+.card>img {
+    width: 100%;
+    height: 33vh;
+    object-fit: cover;
+    border-radius: 1.5% 1.5% 0 0;
+}
+
+.descripcion {
+    justify-content: center;
+    text-align: justify;
+    color: white;
+    padding: 8px;
+    height: 155px;
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.descripcion>h4 {
+    text-align: center;
+    padding: 3% 0 5% 0;
+}
+
+.redes {
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.redes a {
+    margin-right: 3%;
+    color: lightgray;
+}
+
+.redes a:hover {
+    color: white;
+}
+
+.redes>a>i:hover {
+    transform: rotate(360deg);
+    transition: transform .3s ease-in;
+}
+
+.astronaut>img {
+    width: 380px;
+}
+
+.astronaut {
+    position: fixed;
+    z-index: -7;
+    right: -5%;
+    width: max-content;
+    bottom: -8%;
+    animation: astronaut 10s ease-in-out alternate infinite;
+}
+
+@keyframes astronaut {
+    0% {
+        right: -5%;
+        bottom: -8%;
+    }
+    6.6% {
+        right: -4.8%;
+        bottom: -7.8%;
+    }
+    13.2% {
+        right: -4.6%;
+        bottom: -7.6%;
+    }
+    19.8% {
+        right: -4.4%;
+        bottom: -7.4%;
+    }
+    26.4% {
+        right: -4.2%;
+        bottom: -7.2%;
+    }
+    33% {
+        right: -4%;
+        bottom: -7%;
+    }
+    39.6% {
+        right: -3.8%;
+        bottom: -6.8%;
+    }
+    46.2% {
+        right: -3.6%;
+        bottom: -6.6%;
+    }
+    52.8% {
+        right: -3.4%;
+        bottom: -6.4%;
+    }
+    59.4% {
+        right: -3.2%;
+        bottom: -6.2%;
+    }
+    66% {
+        right: -3%;
+        bottom: -6%;
+    }
+    72% {
+        right: -3.2%;
+        bottom: -6.2%;
+    }
+    75% {
+        right: -3.45%;
+        bottom: -6.4%;
+    }
+    79.2% {
+        right: -3.75%;
+        bottom: -6.6%;
+    }
+    85.8% {
+        right: -4.1%;
+        bottom: -7.1%;
+    }
+    92.4% {
+        right: -4.4%;
+        bottom: -7.4%;
+    }
+    99% {
+        right: -4.7%;
+        bottom: -7.8%;
+    }
+    100% {
+        right: -5%;
+        bottom: -8%;
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/grav.svg">
+    <link rel="stylesheet" href="css/registro-curso.css">
+    <title>registrar a curso</title>
+</head>
+
+<body>
+    <div id="audio-suces">
+    </div>
+    <div class="min-top"></div>
+    <div class="circle top-right"></div>
+    <div class="circle bottom-left"></div>
+    <div class="back-protada">
+        <a class="a-back" href="portafolio.html"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA1UlEQVRIS+WUQQ6CMBBFf9mw9SZyBLyBnsS4QndyAq9C6gH0CPUmbiURSI0QbaHtpMPCyIqE5r3502EEZn7EzHz8ieCUrRc1mm2hZEltqbdFGv5AcwGQtUB5UPJIkTgFn3AAtxRJvlPVnUXAAdeFjCbggo8KOOGWgBv+JTDglHu0zu6VHFo/vLwFVwDLKDqAUYGGGhKVIllRx9IszpoibolrTPt2RSWZ/JO5koSsiqgkocvuJRFoN4U6V5Qp8wr66arxzKnwyV1EqdB3NiiBD+L6/vuCDhI4eBntuk7eAAAAAElFTkSuQmCC"
+            /></a>
+    </div>
+    <div class="body">
+        <div class="content">
+            <div class="registro">
+                <h1>REGISTRARSE</h1>
+                <br>
+                <div>
+                    <form id="form-register-curse" class="form-registro">
+                        <input type="text" placeholder="Nombre" id="txtNombre"><br>
+                        <input type="text" placeholder="Apellidos" id="txtApellidos"><br>
+                        <input type="text" placeholder="Correo" id="txtCorreo"><br>
+                        <select name="cursos" id="cbxcursos" class="select-css">
+                            <option value="Musica">Musica</option>
+                            <option value="Cocina">Cocina</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Idiomas">Idiomas</option>
+                        </select>
+                        <button type="submit"> REGISTRARSE</button>
+                    </form>
+                </div>
+                <div class="nota">
+                    <p><b>Nota:</b>Se realizará un seguimiento del curso en el cual se mostrara en la parte de historial.</p>
+                </div>
+            </div>
+            <div class="img">
+                <img src="img/WORLD.png" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        (() => {
+            let obtenerCursos = JSON.parse(localStorage.getItem('tasks')); //obteniendo los cursos del LS
+            let selectCursos = document.getElementById('cbxcursos'); //select 
+            //console.log(obtenerCursos);
+            selectCursos.innerHTML = ``;
+            for (let i = 0; i < obtenerCursos.length; i++) {
+                let title = obtenerCursos[i].NombreCurso;
+
+                selectCursos.innerHTML += `<option value="${title}">${title}</option>`;
+            }
+            //  let insertName = document.getElementById('name-usu');
+            // insertName.innerHTML = "Bienvenido " + obtenerName;
+        })();
+    </script>
+    <script src="js/portafolio.js"></script>
+</body>
+
+</html>

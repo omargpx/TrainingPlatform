@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/perfil-usuario.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="icon" href="img/grav.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Perfil de usuarios</title>
+</head>
+
+<body>
+    <div class="min-top"></div>
+    <div class="circle top-right"></div>
+    <div class="circle bottom-left"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init();
+    </script>
+    <div class="body">
+        <div class="container">
+            <div class="part-perfil">
+                <div class="img-portada-perfil">
+                    <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="portada-perfil">
+                </div>
+                <div data-aos="fade-up" class="card">
+                    <div class="avatar" data-aos="zoom-out">
+                        <img src="img/avatar.svg" alt="avatar">
+                    </div>
+                    <div class="info-usu">
+                        <h3 id="name-usu-card">Nombre de Usuario</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta dolor perferendis velit voluptatum laudantium aut ipsum, assumenda ipsa sequi blanditiis officiis exercitationem, nostrum impedit odit non ratione ut delectus consequatur,
+                            Month.
+                        </p>
+                    </div>
+                </div>
+                <div class="redes">
+                    <i class="social">
+                        <!--imagen facebook-->
+                    </i>
+                    <i class="social">
+                        <!--imagen instagram-->
+                    </i>
+                    <i class="social">
+                        <!--imagen twiter-->
+                    </i>
+                </div>
+            </div>
+            <div class="parts">
+                <div class="historial">
+                    <div data-aos="fade-down" class="title-h">
+                        <h4>Historial <i class="fas fa-chevron-right"></i> Hoy</h4>
+                        <div>
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                    <button class="btn-historial">Musica instrumental <small><i style="color: grey;"> 19:55</i></small> </button>
+                    <button class="btn-historial">Cocina y nutrición <small><i style="color: grey;"> 19:55</i></small> </button>
+                    <button class="btn-historial">Lenguajes de Programación <small><i style="color: grey;"> 19:55</i></small> </button>
+                    <button class="btn-historial">Psicología familiar <small><i style="color: grey;"> 19:55</i></small> </button>
+                    <button class="btn-historial">Lenguajes de Programación <small><i style="color: grey;"> 19:55</i></small> </button>
+                    <hr color="#21252B">
+                </div>
+
+                <div class="activitys" data-aos="zoom-in">
+                    <div class="cards-actvity">
+                        <img src="img/svg/anuncios.svg" alt="">
+                        <h4>Anuncios</h4>
+                    </div>
+                    <div class="cards-actvity">
+                        <img src="img/svg/certificados.svg" alt="">
+                        <h4>Certificados</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="configuracionUsu()">
+                        <img src="img/svg/configuration.svg" alt="">
+                        <h4>Configuración</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="cursos()">
+                        <img src="img/svg/cursos.svg" alt="">
+                        <h4>Cursos</h4>
+                    </div>
+                    <div class="cards-actvity" onclick="dashboard()">
+                        <img src="img/svg/dashboard.svg" alt="">
+                        <h4>Dashboard</h4>
+                    </div>
+                    <div class="cards-actvity">
+                        <img src="img/svg/historial.svg" alt="">
+                        <h4>Historial</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (() => {
+            //mini animaciones para los botones de historial
+            document.getElementsByTagName('button')[0].style.animation = `btn1 .3s ease-out`;
+            document.getElementsByTagName('button')[1].style.animation = `btn2 .5s ease-out`;
+            document.getElementsByTagName('button')[2].style.animation = `btn3 .7s ease-out`;
+            document.getElementsByTagName('button')[3].style.animation = `btn4 .9s ease-out`;
+            document.getElementsByTagName('button')[4].style.animation = `btn5 1.1s ease-out`;
+            //datos 
+            let obtenerName = sessionStorage.getItem('nameUsu');
+            let usuariostorage = JSON.parse(localStorage.getItem("usuarios"));
+            let buscarUsus = usuariostorage.find(apellidos => apellidos.nombre == obtenerName);
+            let nameNav = document.getElementById('name-usu-card');
+            nameNav.innerHTML = ``;
+            nameNav.innerHTML = buscarUsus.nombre + " " + buscarUsus.apellidos;
+            console.log(nameNav);
+        })();
+
+        function configuracionUsu() {
+            window.location.href = "configuracion-usu.html";
+        }
+    </script>
+
+    <script src="js/perfil.js " type="text/JavaScript "></script>
+</body>
+
+</html>

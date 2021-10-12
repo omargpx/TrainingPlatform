@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" href="img/grav.svg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Training Platform</title>
+    <!--swetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <div class="min-top"></div>
+    <div class="circle top-right"></div>
+    <div class="circle bottom-left"></div>
+    <div class="min-circle"></div>
+    <div class="circle-c"></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <script>
+        AOS.init();
+    </script>
+
+    <nav>
+        <div class="menu">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAZElEQVRIS+2TWQ4AEBBD9Whu7mbj2xKjmVRC+C5dXiCJD8Tvp2/gLnx+IjMzN9ZCAKAJPTSQG0TSz+6eZyBvwDLoofYBw5BpA/lE9xs4kDOAwrRkIccNmHQ72gd/8k5tRnP/RBW2JxoZhnBMHwAAAABJRU5ErkJggg==" />
+        </div>
+        <ul class="menu-links">
+            <li>
+                <a href=""> <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            </li>
+            <li>
+                <a href="portafolio.html"> <i class="fas fa-book-open"></i> Cursos</a>
+            </li>
+            <li>
+                <a href="404_error.html"> <i class="fas fa-align-left"></i> Historial</a>
+            </li>
+            <li>
+                <a href="404_error.html"> <i class="far fa-bookmark"></i> Guardado</a>
+            </li>
+            <li>
+                <a href="perfil-usuario.html"> <i class="fas fa-user"></i> Perfil</a>
+            </li>
+            <li>
+                <a onclick="logout()" style="cursor: pointer;padding-bottom: 2em;"><i style="transform: rotate(180deg);" class="fas fa-sign-out-alt"></i> Cerrar Sesion </a>
+            </li>
+        </ul>
+        <div class="logo">
+            <a href="index.html"><img src="img/logoAdra.png" alt="logo" width="150px" height="25px"></a>
+        </div>
+        <div class="name-user">
+            <a href="perfil-usuario.html">
+                <h3 style="margin-right: 5px;" id="name-usu-nav">Pepe Ramirez</h3>
+                <img src="img/avatar.svg" width="22px" />
+            </a>
+        </div>
+    </nav>
+
+    <div class="body">
+        <div class="cursos-registrados" id="curses-registrados" data-aos="zoom-in">
+            <a href="#curso-textileria">
+                <img src="https://images.unsplash.com/photo-1474904200416-6b2b7926f26f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="textileria">
+                <div>
+                    <h4 style="color: #88304E;">Textilería</h4>
+                    <span style="color: lightgrey; font-size: 14px;">Mariana Rodríguez Muños</span><br>
+                    <small><span style="color: rgb(90, 90, 90);">Canal: <i>Manualidades</i> </span></small>
+                </div>
+            </a>
+            <a href="#lenguajes-programacion">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="programacion">
+                <div>
+                    <h4 style="color: #88304E;">Lenguajes de Programación</h4>
+                    <span style="color: lightgrey; font-size: 14px;">Pepe Gomez Huaman</span><br>
+                    <small><span style="color: rgb(90, 90, 90);">Canal: <i>Code with Mojo</i> </span></small>
+                </div>
+            </a>
+            <a href="#Fotografia">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80" alt="fotografia">
+                <div>
+                    <h4 style="color: #88304E;">Fototgrafía</h4>
+                    <span style="color: lightgrey; font-size: 14px;">Sara Tumbajulca Bravo</span><br>
+                    <small><span style="color: rgb(90, 90, 90);">Canal: <i>Alph zurita</i> </span></small>
+                </div>
+            </a>
+            <a href="404_error.html">
+                <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=647&q=80" alt="repo">
+                <div>
+                    <h4 style="color: #88304E;">Repostería</h4>
+                    <span style="color: lightgrey; font-size: 14px;">Joana Vargas Santillan</span><br>
+                    <small><span style="color: rgb(90, 90, 90);">Canal: <i>Cocinero en casa</i> </span></small>
+                </div>
+            </a>
+            <a href="404_error.html">
+                <img src="https://images.unsplash.com/photo-1596464716127-f2a82984de30?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="manualidade">
+                <div>
+                    <h4 style="color: #88304E;">Manualidades</h4>
+                    <span style="color: lightgrey; font-size: 14px;">Joana Vargas Santillan</span><br>
+                    <small><span style="color: rgb(90, 90, 90);">Canal: <i>Manualidades</i> </span></small>
+                </div>
+            </a>
+        </div>
+        <div class="contenido-principal">
+            <div class="lala" data-aos="zoom-in">
+                <div class="camera-lap">
+                    <img src="img/cam.png" alt="">
+                </div>
+                <div class="content-publicity">
+                    <ul>
+                        <li>
+                            <a href="404_error.html"><img src="https://images.unsplash.com/photo-1603394712469-6cb9d14eebd5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="404_error.html"><img src="img/banner.jpg" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="404_error.html"><img src="https://images.unsplash.com/photo-1537511446984-935f663eb1f4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="title-cursos-destacados">
+                <h4>Cursos destacados</h4>
+                <a href="404_error.html">Portafolio <small><i class="fas fa-chevron-right"></i> </small></a>
+            </div>
+            <div class="cursos-destacados" data-aos="zoom-in">
+                <div class="camp-slide">
+                    <ul>
+                        <li>
+                            <img src="https://images.unsplash.com/photo-1544205497-14a3194fe440?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="">
+                            <a href="404_error.html">
+                                <div class="info-curso cur">
+                                    <h5>Desarrollo Web</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://images.unsplash.com/photo-1623026167696-bcb2d472e1fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=413&q=80" alt=""></a>
+                            <a href="404_error.html">
+                                <div class="info-curso cur2">
+                                    <h5>Arquitectura</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://images.unsplash.com/photo-1601882906700-3035ebabe365?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt=""></a>
+                            <a href="404_error.html">
+                                <div class="info-curso cur3">
+                                    <h5>Fotografia</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://images.unsplash.com/photo-1577498358908-f393ca205cc7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt=""></a>
+                            <a href="404_error.html">
+                                <div class="info-curso cur4">
+                                    <h5>La India</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt=""></a>
+                            <a href="404_error.html">
+                                <div class="info-curso cur5">
+                                    <h5>Mecánica</h5>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="https://images.unsplash.com/photo-1621268409517-87b2c96828b9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt=""></a>
+                            <a href="404_error.html">
+                                <div class="info-curso cur5">
+                                    <h5>Cultura General</h5>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="perfil-user" data-aos="zoom-in">
+            <div class="perfil">
+                <div class="portada-perfil">
+                    <img src="https://images.unsplash.com/photo-1575761344173-aa186491c120?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+                </div>
+                <div class="user">
+                    <div class="avatar">
+                        <img src="img/avatar.svg" alt="perfil">
+                    </div>
+                    <h4 id="name-usu">Pepe Ramirez</h4>
+                </div>
+                <div class="biografia">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id eos aut ab illo velit, adipisci nisi voluptatem blanditiis suscipit totam.</p>
+                    <hr color="#283036">
+                    <div class="certificados-user">
+                        <h6><i class="fas fa-certificate"></i> Certificados</h6> <span>7</span>
+                    </div>
+                    <hr color="#283036">
+                    <div class="cursos">
+                        <h6> <i class="fas fa-book"></i> Cursos</h6><span>5</span>
+                    </div>
+                    <hr color="#283036">
+                    <div class="guardado">
+                        <h6> <i class="far fa-bookmark"></i> Guardado </h6> <span>0</span>
+                    </div>
+                    <hr color="#283036">
+                    <div class="nacionalidad">
+                        <h6> <i class="fas fa-flag"></i> Nacionalidad</h6>
+                        <img src="img/countri/peru_48px.png" alt="flag">
+                    </div>
+                </div>
+                <div class="user-tools">
+                    <a href="perfil-usuario.html">ver perfil</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        (() => {
+            //cursos registrados
+            let seguimiento = JSON.parse(localStorage.getItem('seguimiento')); // obteniendo las cursos del localstorage
+            let divLoadCurso = document.getElementById('curses-registrados');
+            divLoadCurso.innerHTML = ``;
+            for (let i = 0; i < seguimiento.length; i++) {
+                let curso = seguimiento[i].curso; //cuurso registrado
+                let obtenerCursos = JSON.parse(localStorage.getItem('tasks'));
+                let buscarCurso = obtenerCursos.find(s => s.NombreCurso == curso);
+                let docente = buscarCurso.NombreDocente;
+                let portada = buscarCurso.portada;
+                let clases = buscarCurso.clases.length;
+
+                divLoadCurso.innerHTML += `<a href="" class="${portada}" id="cursosUsu">
+                <img class="${portada}" src="${portada}" alt="${curso}">
+                <div>
+                    <h4 class="${portada}" style="color: #88304E;">${curso}</h4>
+                    <span class="${portada}" style="color: lightgrey; font-size: 14px;">${docente}</span><br>
+                    <small><span class="${portada}" style="color: rgb(90, 90, 90);">Clases: <i>${clases}</i> </span></small>
+                </div>
+            </a>`;
+            }
+
+            //nombre del usuario
+            let insertName = document.getElementById('name-usu');
+            let nameNav = document.getElementById('name-usu-nav');
+            let obtenerName = sessionStorage.getItem('nameUsu'); //obteniendo nombre de usuario del sesionSTORAGE
+            //localSTorage
+            let usuariostorage = JSON.parse(localStorage.getItem("usuarios"));
+            let buscarUsus = usuariostorage.find(usuario => usuario.nombre == obtenerName);
+            console.log(buscarUsus);
+
+            if (obtenerName == null) {
+                swal("Sesion Storage", "no se obtuvo el nombre de usuario", "warning");
+            } else {
+                insertName.innerHTML = obtenerName;
+                nameNav.innerHTML = "Bienvenido " + obtenerName;
+                console.log('no se obtuvo el name');
+            }
+        })();
+
+        function logout() {
+            history.pushState(null, null, 'no-back-button');
+            window.addEventListener('popstate', function(event) {
+                history.pushState(null, null, 'no-back-button');
+            });
+            window.location.href = "iniciar_sesion.html";
+        }
+        //seleccion de cursos y traspase de datos 
+        let cursoSelected = document.querySelector('#cursosUsu');
+        cursoSelected.addEventListener('click', contenCurso);
+
+        function contenCurso(e) {
+            e.preventDefault();
+            console.log(e.target.classList[0]);
+            let nameCurso = e.target.classList[0];
+            localStorage.setItem('clases_del_curso', JSON.stringify(nameCurso));
+            window.location.href = "clases.html";
+        }
+    </script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+html::-webkit-scrollbar-thumb {
+    background-color: #88304E;
+    border-radius: 20px;
+    border: 2px solid #88304E;
+}
+
+html::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar-button:increment,
+html::-webkit-scrollbar-button {
+    display: none;
+}
+
+html::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+html::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
+html::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+html::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    overflow-x: hidden;
+}
+
+
+/*----------------------------------------------*/
+
+nav {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    left: 0;
+    background: linear-gradient(to bottom, #031024cf, transparent);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 6vh;
+    align-items: center;
+}
+
+.menu-links {
+    position: absolute;
+    background: rgba(26, 28, 32, 0.541);
+    display: flex;
+    backdrop-filter: blur(3px);
+    box-shadow: inset 0 0 2000px rgba(26, 28, 32, 0.822);
+    flex-direction: column;
+    top: 6vh;
+    width: 20%;
+    height: max-content;
+    z-index: 2;
+    text-align: center;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform .5s ease-in;
+    border-radius: 0 5px 5px 0;
+}
+
+.nav-active {
+    transform: translateX(0);
+    transition: transform .5s ease-in;
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+img {
+    image-resolution: inherit;
+}
+
+.menu-links>li {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: flex-start;
+}
+
+.menu-links>li>a {
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+    width: 100%;
+    text-align: start;
+    color: white;
+    font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu-links>li>a:hover {
+    color: #af3b77;
+    transition: color 0.15s ease-in;
+}
+
+.menu {
+    margin-left: 0.5%;
+    cursor: pointer;
+}
+
+.name-user>a:hover {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
+
+.name-user>a>img {
+    border-radius: 50%;
+}
+
+.name-user {
+    margin-right: 1%;
+}
+
+.name-user>a {
+    opacity: 0.8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    font-size: 12px;
+}
+
+.logo {
+    margin-left: 2%;
+    margin-top: 0%;
+}
+
+.logo:hover {
+    filter: blur(1.5px) contrast(110%);
+    cursor: default;
+}
+
+
+/* TODO:Fin de la navegación*/
+
+
+/*Portafolio*/
+
+.min-portafolio {
+    margin-top: 35%;
+    width: 100%;
+    min-height: 35%;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    column-gap: 1em;
+    row-gap: 0.8em;
+    padding: 10% 2% 2% 2%;
+    background: linear-gradient(to bottom, transparent, #0b0e1463, #0b0e14d0, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14, #0B0E14);
+    color: white;
+    backdrop-filter: blur(1px);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-course {
+    background-color: #272B33;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px 5px 0 0;
+}
+
+.hov-card:hover {
+    transform: scale(1.02);
+    transition: transform .3s ease-in;
+    cursor: pointer;
+}
+
+.card-course>img {
+    width: 100%;
+    height: 33vh;
+    object-fit: cover;
+    border-radius: 1.5% 1.5% 0 0;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+}
+
+.descripcion>div {
+    width: 100%;
+    text-align: center;
+    color: gray;
+}
+
+.descripcion>p {
+    text-align: justify;
+    padding: 2%;
+}
+
+.descripcion>h4 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*imagenes de background slide*/
+
+.imgSlide {
+    position: absolute;
+    z-index: -7;
+    top: -5%;
+    left: 0;
+    width: 100%;
+    height: 105vh;
+    overflow: hidden;
+}
+
+.imgSlide ul {
+    width: 330%;
+    display: flex;
+    padding: 0;
+    animation: slider 20s infinite alternate;
+    animation-timing-function: ease-in;
+    height: inherit;
+}
+
+.imgSlide li {
+    list-style: none;
+    width: 110%;
+    height: 100%;
+    height: inherit;
+}
+
+.imgSlide a {
+    height: 100%;
+}
+
+.imgSlide img {
+    width: 100%;
+    height: 100%;
+    height: inherit;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(110%);
+}
+
+@keyframes slider {
+    0% {
+        margin-left: 0;
+    }
+    30% {
+        margin-left: 0;
+    }
+    35% {
+        margin-left: -115%;
+    }
+    65% {
+        margin-left: -115%;
+    }
+    70% {
+        margin-left: -230%;
+    }
+    100% {
+        margin-left: -230%;
+    }
+}
+
+.circle-port {
+    position: absolute;
+    top: 0;
+    left: -33em;
+    width: 50em;
+    height: 50em;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.068);
+    backdrop-filter: blur(3px);
+    box-shadow: inset 0 0 2000px rgb(26, 28, 32);
+    transform: rotate(45deg);
+}
+
+.wave {
+    position: absolute;
+    top: 28%;
+    left: 8%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: max-content;
+}
+
+.wave img {
+    width: 350px;
+    filter: contrast(120%);
+}
+
+.border-bottom-primary {
+    border-bottom: .25rem solid #4e73df!important
+}
+
+@media screen and (max-width: 1051px) {
+    .circle-port {
+        display: none;
+    }
+    .wave {
+        display: none;
+    }
+    .min-portafolio {
+        margin-top: 40%;
+    }
+}
+
+@media screen and (max-width: 985px) {
+    .min-portafolio {
+        margin-top: 55%;
+        grid-template-columns: 31% 31% 31%;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .min-portafolio {
+        margin-top: 65%;
+        grid-template-columns: 48% 47%;
+        grid-template-rows: auto auto auto auto;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .min-portafolio {
+        margin-top: 75%;
+        grid-template-columns: 95%;
+        grid-template-rows: auto auto auto auto;
+    }
+    .menu-links {
+        width: 100%;
+        height: 94vh;
+    }
+    .name-user {
+        width: 25px;
+        opacity: 0;
+    }
+}
