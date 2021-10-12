@@ -3,8 +3,10 @@ Esta plataforma es de simulación de cursos, utilizando local storage
 
 > el sitio web cuenta con un login, por lo que deveras revisar el local storage de la pagina y revisar los datos de ingreso directo
 
-![vista home](https://i.ibb.co/99rNNWF/tp.png)
-
+<div style="inline-block">
+  <img src="https://i.ibb.co/99rNNWF/tp.png" width="400"/>
+  <img src="https://i.ibb.co/cvCMstj/screen.png" width="400"/>
+</div>
 ### Usuarios
 
 > usuario: pancasramires@gmail.com contraseña: 123456 - usuario2:mariolucho@gmail.com contraseña:123456
